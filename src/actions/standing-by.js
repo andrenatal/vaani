@@ -5,7 +5,6 @@ import StandingByStore from '../stores/standing-by';
 import Localizer from '../lib/localizer';
 import Vaani from '../lib/vaani';
 import AppLauncher from '../lib/app-launcher';
-import Dialer from '../lib/dialer';
 import DisplayActions from './display';
 import TalkieActions from './talkie';
 import 'string.prototype.startswith';
@@ -92,7 +91,7 @@ class StandingByActions {
       var specialAppContacts = entities[5].value;
 
       if (command[callCommandCue](callCommand)) {
-        var phoneNumber = Dialer.wordsToDigits(command);
+        var phoneNumber = command;
 
         CallNumberStore.updatePhoneNumber(phoneNumber);
 
